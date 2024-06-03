@@ -1,3 +1,6 @@
+# Stock Price Prediction System
+
+The Stock Price Prediction System is a project designed to predict stock prices using machine learning techniques. It includes two main components: a model training script and a web application. The model training script uses historical stock data to train a Long Short-Term Memory (LSTM) neural network model, and the web application uses the trained model to make stock price predictions.
 
 **File 1: stock_market_prediction.py - Training the Prediction Tool**
 
