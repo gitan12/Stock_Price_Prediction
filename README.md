@@ -1,79 +1,47 @@
-### Stock Market Prediction Application
 
-#### Overview
-The project involves building a stock market prediction application using historical stock data. The application predicts future stock prices using machine learning models and displays the predictions along with moving averages. The user can input a stock ticker and a date range to get the predicted stock prices and visualizations.
+**File 1: stock_market_prediction.py - Training the Prediction Tool**
 
-#### Prerequisites
-Before running the application, ensure that you have the following Python packages installed. You can install them using the provided `requirement.txt` file.
+1. **Downloading Stock Price Data:**
+   - Imagine you want to predict the price of Apple (AAPL) stock. This file uses a library called `yfinance` to download historical closing prices for AAPL from the internet. You can specify a date range to get data for a specific period.
 
-#### Installation
-1. **Install the required packages**:
-   ```sh
-   pip install -r requirement.txt
-   ```
-   
-   The `requirement.txt` file includes:
-   - streamlit
-   - pandas
-   - numpy
-   - matplotlib
-   - yfinance
-   - scikit-learn
-   - keras
-   - tensorflow
+2. **Preparing the Data for Prediction:**
+   - Not all downloaded data might be perfect. There could be missing price information for some days. This file removes those missing bits using `dropna`.
+   - Splitting the Data: Imagine having a practice test before an actual exam. Here, the data is split into two parts: training data (practice test) and testing data (actual exam). The model learns from the training data (80% of the data) and is evaluated on the testing data (20% of the data).
+   - Scaling the Data: Prices can fluctuate wildly. This file uses a technique called MinMaxScaler to transform all price values between 0 and 1. This makes the data easier for the model to understand.
+   - Creating Sequences: Stock prices are influenced by past trends. The file creates sequences of 100 past closing prices. For example, the model might see the closing prices for the last 100 days to predict the 101st day's price.
 
-#### Files in the Project
-1. **`app.py`**: The main application file to run the Streamlit web app.
-2. **`Stock Market Prediction.ipynb`**: Jupyter Notebook containing the development and experimentation code for the prediction model.
-3. **Images**: Two images showing the application interface and results.
+3. **Building a Stock Price Prediction Model:**
+   - This is where the magic happens! The file builds a special kind of neural network called a Long Short-Term Memory (LSTM) model. Think of an LSTM model as a complex calculator that can learn from sequences of data.
+   - The model has multiple LSTM layers that process the data sequences (100 past prices). These layers can identify short-term and long-term patterns in the data.
+   - Dropout layers help prevent the model from overfitting, which means it becomes too reliant on the training data and performs poorly on unseen data.
+   - Finally, a Dense layer translates the processed information from the LSTM layers into a single output, the predicted price.
+   - The model is compiled with an optimizer (Adam) that helps it learn and adjust its predictions based on the training data. It also uses a loss function (mean squared error) to measure how different the model's predictions are from the actual closing prices.
 
-#### Running the Application
-To run the application, use the following command in your terminal:
-```sh
-streamlit run app.py
-```
+4. **Making Predictions and Visualizing Results:**
+   - Once trained, the model is tested on the unseen data (testing set). It predicts prices for the remaining days in the testing data.
+   - Remember the scaling done earlier (0 to 1)? This file reverses that scaling to get the predicted prices back in their original units (like dollars).
+   - The file then creates charts to compare the predicted prices with the actual closing prices. This helps us see how well the model performed.
 
-#### Detailed Explanation of the Files
+5. **Saving the Trained Model:**
+   - After training, the model is saved as a file. This way, you can use the same model later to predict prices for other stocks without retraining it from scratch.
 
-**1. `app.py`**
-- **Imports and Libraries**: The script imports necessary libraries including `streamlit`, `pandas`, `numpy`, `matplotlib.pyplot`, `yfinance`, `scikit-learn`, `keras`, and `tensorflow`.
-- **User Input**: The user is prompted to input a stock ticker, start date, and end date.
-- **Data Retrieval**: Historical stock data is fetched from Yahoo Finance using the `yfinance` library.
-- **Data Processing**: The data is processed to calculate the 100-day and 200-day moving averages.
-- **Model Training and Prediction**: A machine learning model is trained using the historical stock data. The script uses Keras and TensorFlow for building and training the model.
-- **Visualization**: The results, including the moving averages and predicted stock prices, are plotted using `matplotlib` and displayed on the Streamlit app.
+**File 2: app.py - Building a User-Friendly Web App**
 
-**2. `Stock Market Prediction.ipynb`**
-- This notebook includes the detailed steps for data preprocessing, model training, and evaluation. It serves as a development and experimentation environment where different models and approaches can be tested before being integrated into the `app.py`.
+1. **Web App Interface:**
+   - This file creates a web app using Streamlit, a framework for building data apps. The app has a user-friendly interface where you can enter a stock ticker symbol (e.g., AAPL), start date, and end date.
 
-**3. Images**
-- These images show the interface and output of the Streamlit application.
-   - **Image 1**: Shows the stock ticker input, date range input, a table of the latest stock prices, and a plot of the 100-day and 200-day moving averages.
-     ![WhatsApp Image 2024-06-03 at 1 30 35 PM](https://github.com/gitan12/Stock-Market-Prediction-/assets/152585363/be161d5b-e4f3-46b1-a79d-af2eebe02c77)
+2. **Downloading and Preprocessing Data from User Input:**
+   - Based on your input, the app fetches new historical data for that specific stock and date range using `yfinance`.
+   - Similar to file 1, the app cleans and prepares the downloaded data for prediction.
 
-   - **Image 2**: Displays the model's predicted prices overlaid with the original prices to show the accuracy of the predictions.
-     ![WhatsApp Image 2024-06-03 at 1 30 15 PM](https://github.com/gitan12/Stock-Market-Prediction-/assets/152585363/325785ee-4404-4355-8d06-6e656bd7c809)
+3. **Using the Trained Model for Prediction on New Data:**
+   - The app retrieves the pre-trained model (saved from file 1).
+   - It uses the model to predict future prices for the stock you entered, considering the data for the specified date range.
 
+4. **Visualization on the Web App:**
+   - The app displays charts showing the predicted closing prices for the chosen stock. If available, it also shows the actual historical closing prices for comparison.
 
-#### Steps to Use the Application
-1. **Open Terminal**: Navigate to the project directory.
-2. **Run the Application**: Execute the command `streamlit run app.py`.
-3. **Input Parameters**: In the web interface, enter the stock ticker (e.g., `ADANIPORTS.NS`), start date, and end date.
-4. **View Results**: The application will display the latest stock prices, moving averages, and predicted prices.
+**Important Note:**
 
-### Example Results
-The following are screenshots of the application output:
-
-- **Input Parameters and Moving Averages**
-  ![WhatsApp Image 2024-06-03 at 1 30 35 PM](https://github.com/gitan12/Stock-Market-Prediction-/assets/152585363/8eb050d6-7531-4da4-b290-9cf7875bd8a1)
-
-- **Predicted Prices**
-  ![WhatsApp Image 2024-06-03 at 1 30 15 PM](https://github.com/gitan12/Stock-Market-Prediction-/assets/152585363/f5ea5e9e-4eac-45f7-94b4-9f598133b7ce)
-
-These images demonstrate the application’s capability to fetch, process, and visualize stock market data effectively.
-
-#### Conclusion
-This application is a powerful tool for predicting stock prices using historical data and machine learning. By following the instructions in this README, users can set up and run the application to make their own stock market predictions.
-
----
-
+* Predicting stock prices is a complex task, and these models are not always accurate. The future price of a stock is influenced by many factors beyond historical data.
+* This system is for educational purposes only and should not be used for making investment decisions. 
