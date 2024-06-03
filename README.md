@@ -62,21 +62,16 @@ Model saved as "Stock Predictions Model.keras" This message indicates that the t
 
 This user interface seems to be designed for a more general user who might not be familiar with the underlying model.
 It focuses on data visualization and presentation of results.
-Here's a breakdown of the user interface elements visible in image 2:
-
-Top Left Section:
-It displays the stock ticker symbol (ADANIPORTS NS in this case) for which data is being shown.
-User Input Parameters:
-Stock Ticker: This field likely allows users to enter a different stock ticker symbol.
-Start Date and End Date: These fields allow users to specify the date range for the data they want to see.
-Deploy: This button likely triggers the model to use the entered parameters and display the results on the graph.
 Graph:
 The x-axis represents the date.
 The y-axis represents the stock price.
-The blue line represents the closing price of the stock.
-The orange line (not always visible) represents the predicted closing price of the stock (if the model is configured to make predictions).
-The green and red lines (not always visible) represent the 100-day and 200-day moving averages, depending on the user's selection.
-2024/05/28 This likely indicates the most recent date for which data is available.
+The blue line represents the closing price of the stock over the specified date range.
+The orange line (not always visible) represents the predicted closing price of the stock (if the model is configured to make predictions). In the image you sent, the orange line is not visible, so it likely means prediction is not enabled for this view.
+The green line (not always visible) represents the 100-day moving average.
+The red line (not always visible) represents the 200-day moving average. The presence of these lines depends on the user's selection from the moving average buttons.
+2024/05/28  This likely indicates the most recent date for which data is available (shown as 28th May 2024).
+
+
 
 
 **Important Note:**
