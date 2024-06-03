@@ -1,9 +1,7 @@
-Your README file is comprehensive and well-structured. Here are a few minor adjustments and enhancements for better clarity and completeness:
-
 ### Stock Market Prediction Application
 
 #### Overview
-This project involves building a stock market prediction application using historical stock data. The application predicts future stock prices using machine learning models and displays the predictions along with moving averages. The user can input a stock ticker and a date range to get the predicted stock prices and visualizations.
+The project involves building a stock market prediction application using historical stock data. The application predicts future stock prices using machine learning models and displays the predictions along with moving averages. The user can input a stock ticker and a date range to get the predicted stock prices and visualizations.
 
 #### Prerequisites
 Before running the application, ensure that you have the following Python packages installed. You can install them using the provided `requirement.txt` file.
@@ -79,4 +77,3 @@ This application is a powerful tool for predicting stock prices using historical
 
 ---
 
-This revised README is mostly the same as your version but with a few minor formatting adjustments for better readability. It looks like you have a well-documented and useful application!
