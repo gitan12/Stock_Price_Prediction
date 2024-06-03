@@ -44,6 +44,19 @@ The Stock Price Prediction System is a project designed to predict stock prices 
 4. **Visualization on the Web App:**
    - The app displays charts showing the predicted closing prices for the chosen stock. If available, it also shows the actual historical closing prices for comparison.
 
+
+**Stock Price Prediction User Interface: Training & Exploration**
+1. **Image 1: Training the Prediction Engine (Technical View)**
+![WhatsApp Image 2024-06-03 at 1 30 35 PM](https://github.com/gitan12/Stock_Market_Prediction/assets/152585363/3cdc6b1b-3e7d-46d7-a868-64be9093b31a)
+
+Model trained successfully! This message likely indicates that the training of the LSTM model (described previously) was successful.
+User Input Parameters: This section likely refers to the parameters a user would input to make a prediction.
+Stock Ticker is a field where a user would enter a stock symbol, such as AAPL for Apple or GOOG for Google and so on.
+Predicted Price and Original Price are likely the predicted closing price and the actual closing price for a specific date range. However, these values are not visible in the screenshot.
+Start Date and End Date are likely where the user would specify the date range for which they want to predict stock prices.
+The graph in the bottom section likely shows the predicted closing prices (blue line) compared to the actual closing prices (orange line) for the specified stock and date range.
+Model saved as "Stock Predictions Model.keras" This message indicates that the trained model has been saved for future use.
+
 **Important Note:**
 
 * Predicting stock prices is a complex task, and these models are not always accurate. The future price of a stock is influenced by many factors beyond historical data.
