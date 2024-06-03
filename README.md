@@ -77,6 +77,7 @@ The red line (not always visible) represents the 200-day moving average. The pre
 
 
 
+
 **Important Note:**
 
 * Predicting stock prices is a complex task, and these models are not always accurate. The future price of a stock is influenced by many factors beyond historical data.
