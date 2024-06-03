@@ -47,6 +47,7 @@ The Stock Price Prediction System is a project designed to predict stock prices 
 
 **Stock Price Prediction User Interface: Training & Exploration**
 1. **Image 1: Training the Prediction Engine (Technical View)**
+
 ![WhatsApp Image 2024-06-03 at 1 30 35 PM](https://github.com/gitan12/Stock_Market_Prediction/assets/152585363/3cdc6b1b-3e7d-46d7-a868-64be9093b31a)
 
 Model trained successfully! This message likely indicates that the training of the LSTM model (described previously) was successful.
@@ -58,6 +59,8 @@ The graph in the bottom section likely shows the predicted closing prices (blue 
 Model saved as "Stock Predictions Model.keras" This message indicates that the trained model has been saved for future use.
 
 2. **Image 2: Exploring Stock Prices (User-Friendly View)**
+
+
    ![WhatsApp Image 2024-06-03 at 1 30 15 PM](https://github.com/gitan12/Stock_Market_Prediction/assets/152585363/87c7159e-41e6-47f0-bd17-c8410f88a2fa)
 
 This user interface seems to be designed for a more general user who might not be familiar with the underlying model.
