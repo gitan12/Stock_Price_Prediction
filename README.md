@@ -57,6 +57,28 @@ Start Date and End Date are likely where the user would specify the date range f
 The graph in the bottom section likely shows the predicted closing prices (blue line) compared to the actual closing prices (orange line) for the specified stock and date range.
 Model saved as "Stock Predictions Model.keras" This message indicates that the trained model has been saved for future use.
 
+2. **Image 2: Exploring Stock Prices (User-Friendly View)**
+   ![WhatsApp Image 2024-06-03 at 1 30 15 PM](https://github.com/gitan12/Stock_Market_Prediction/assets/152585363/87c7159e-41e6-47f0-bd17-c8410f88a2fa)
+
+This user interface seems to be designed for a more general user who might not be familiar with the underlying model.
+It focuses on data visualization and presentation of results.
+Here's a breakdown of the user interface elements visible in image 2:
+
+Top Left Section:
+It displays the stock ticker symbol (ADANIPORTS NS in this case) for which data is being shown.
+User Input Parameters:
+Stock Ticker: This field likely allows users to enter a different stock ticker symbol.
+Start Date and End Date: These fields allow users to specify the date range for the data they want to see.
+Deploy: This button likely triggers the model to use the entered parameters and display the results on the graph.
+Graph:
+The x-axis represents the date.
+The y-axis represents the stock price.
+The blue line represents the closing price of the stock.
+The orange line (not always visible) represents the predicted closing price of the stock (if the model is configured to make predictions).
+The green and red lines (not always visible) represent the 100-day and 200-day moving averages, depending on the user's selection.
+2024/05/28 This likely indicates the most recent date for which data is available.
+
+
 **Important Note:**
 
 * Predicting stock prices is a complex task, and these models are not always accurate. The future price of a stock is influenced by many factors beyond historical data.
